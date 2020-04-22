@@ -17,8 +17,8 @@ You will also see any lint errors in the console.
 
 ### `npm run start`
 
-Launhes the node server for services.Service Run at [http://localhost:3000](http://localhost:3000).
+Launches the react FE server for services.Service Run at [http://localhost:3000](http://localhost:3000).
 
 ### `npm run serve`
 
-Launhes the node server for services.Service Run at [http://localhost:8080](http://localhost:8080).
+Launches the node server for services.Service Run at [http://localhost:8080](http://localhost:8080).
