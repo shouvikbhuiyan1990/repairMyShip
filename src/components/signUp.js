@@ -14,7 +14,7 @@ import Loader from './common/loader';
 import Banner from './common/alert';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
-import { setLogIn, setUserData, setCookie } from './common/utility';
+import { setCookie } from './common/utility';
 
 import {
     useHistory,
@@ -79,10 +79,8 @@ const SignUp = () => {
             let res = await axios.post('https://still-woodland-82685.herokuapp.com/users/saveOne', body);
             setLoader(false);
             const { data } = res;
-            setLogIn(true);
 
             setCookie('loginToken', data.token, 1);
-            setUserData(data);
             setCookie('userId', data.user._id, 1);
 
             setCookie('userName', `${data.user.firstname || ''} ${data.user.lastname || ''}`, 1);

@@ -2,18 +2,6 @@ const isLoggedIn = () => {
     return !!getCookie('loginToken');
 }
 
-const setLogIn = (value) => {
-    return sessionStorage.setItem('isLoggedIn', value);
-}
-
-const getUserData = () => {
-    return JSON.parse(sessionStorage.getItem('userData'));
-}
-
-const setUserData = (value) => {
-    return sessionStorage.setItem('userData', JSON.stringify(value));
-}
-
 const setCookie = (cname, cvalue, exdays) => {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -43,4 +31,4 @@ const deleteCookie = (key, domain = null, path = '/') => {
     document.cookie = `${key}=;${domainPart}path=${path};expires=Thu, 01 Jan 1970 00:00:01 GMT`;
 }
 
-export { isLoggedIn, setLogIn, getUserData, setUserData, setCookie, getCookie, deleteCookie };
+export { isLoggedIn, setCookie, getCookie, deleteCookie };
