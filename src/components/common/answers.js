@@ -125,8 +125,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
         debounce(async () => {
             try {
                 setLoader(false);
-                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/deleteOne', body, headers);
-                const { data } = res;
+                await axios.post('https://still-woodland-82685.herokuapp.com/answers/deleteOne', body, headers);
                 fetchData();
             }
             catch(e) {

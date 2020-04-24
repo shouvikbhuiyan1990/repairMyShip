@@ -73,9 +73,8 @@ const ForgotPassword = () => {
         };
 
         try {
-            let res = await axios.put('https://still-woodland-82685.herokuapp.com/users/changepassword', body);
+            await axios.put('https://still-woodland-82685.herokuapp.com/users/changepassword', body);
             setLoader(false);
-            const { data } = res;
             setSuccess(true);
             setError(false)
             setTimeout(() => {
