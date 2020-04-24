@@ -89,7 +89,7 @@ const MyAccount = () => {
             }
         }
         fetchData();
-    });
+    }, [history]);
 
 
     const HtmlTooltip = withStyles((theme) => ({
