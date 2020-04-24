@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -98,7 +98,7 @@ const QuestionDetail = (props) => {
         }
     }, [questionDetail]);
 
-    const fetchData = async () => {
+    const fetchData = useCallback( async () => {
         const headers = {
             headers: {
                 'authorization': getCookie('loginToken')
@@ -113,7 +113,7 @@ const QuestionDetail = (props) => {
                 history.push('/', {customLoginMessage: true});
             }
         }
-    }
+    }, [ history, qid ] )
 
     const updateAnswer = (answer) => {
         setRichText(answer.answer);
@@ -124,7 +124,7 @@ const QuestionDetail = (props) => {
 
     useEffect(() => {
         fetchData();
-    });
+    }, [fetchData]);
 
     const answers = questionDetail.answers;
 
