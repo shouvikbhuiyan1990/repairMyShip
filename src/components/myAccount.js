@@ -5,6 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Loader from './common/loader';
 import Questions from './common/questions';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -67,9 +68,11 @@ const MyAccount = () => {
     const [question, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [loyalty, setLoyalty] = useState('');
+    const [loader, setLoader] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
+        setLoader(true);
         const headers = {
             headers: {
                 'authorization': getCookie('loginToken')
@@ -78,11 +81,13 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
+                setLoader(false);
                 let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getQuestionsByUser', headers);
                 setQuestions(result.data.questions);
                 setAnswers(result.data.answers);
             }
             catch (e) {
+                setLoader(false);
                 if (e.response.status === 401) {
                     history.push('/', { customLoginMessage: true });
                 }
@@ -102,6 +107,7 @@ const MyAccount = () => {
 
 
     useEffect(() => {
+        setLoader(true);
         const headers = {
             headers: {
                 'authorization': getCookie('loginToken')
@@ -110,10 +116,12 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
+                setLoader(false);
                 let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getLoyalty', headers);
                 setLoyalty(result.data.tier);
             }
             catch (e) {
+                setLoader(false);
                 if (e.response.status === 401) {
                     history.push('/', { customLoginMessage: true });
                 }
@@ -124,6 +132,7 @@ const MyAccount = () => {
 
     return (
         <Container className={classes.container}>
+            <Loader show={loader}/>
             <Box className={classes.qaRoot}>
                 <Fab color="secondary"
                     aria-label="edit"

@@ -99,6 +99,7 @@ const QuestionDetail = (props) => {
     }, [questionDetail]);
 
     const fetchData = useCallback( async () => {
+        setLoader(true);
         const headers = {
             headers: {
                 'authorization': getCookie('loginToken')
@@ -107,8 +108,10 @@ const QuestionDetail = (props) => {
         try {
             let result = await axios(`https://still-woodland-82685.herokuapp.com/question/getAnswersByQuestion/${qid}`, headers);
             setQuestionDetail(result.data);
+            setLoader(false);
         }
         catch(e) {
+            setLoader(false);
             if( e.response.status === 401 ) {
                 history.push('/', {customLoginMessage: true});
             }
