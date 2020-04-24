@@ -81,10 +81,10 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
-                setLoader(false);
                 let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getQuestionsByUser', headers);
                 setQuestions(result.data.questions);
                 setAnswers(result.data.answers);
+                setLoader(false);
             }
             catch (e) {
                 setLoader(false);
@@ -107,7 +107,7 @@ const MyAccount = () => {
 
 
     useEffect(() => {
-        setLoader(true);
+        // setLoader(true);
         const headers = {
             headers: {
                 'authorization': getCookie('loginToken')
@@ -116,12 +116,12 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
-                setLoader(false);
+                // setLoader(false);
                 let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getLoyalty', headers);
                 setLoyalty(result.data.tier);
             }
             catch (e) {
-                setLoader(false);
+                // setLoader(false);
                 if (e.response.status === 401) {
                     history.push('/', { customLoginMessage: true });
                 }

@@ -140,6 +140,7 @@ const QuestionDetail = (props) => {
             }
         };
         try {
+
             if(!updateMode) {
                 const body = {
                     answer: richText,
@@ -150,6 +151,7 @@ const QuestionDetail = (props) => {
                 const { data } = res;
                 setnswer(data);
                 setRichText('');
+                fetchData();
             }
             else {
                 const body = {

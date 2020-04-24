@@ -37,7 +37,7 @@
     "serve": "nodemon ./server/index.js",
     "dev": "(cd server && nodemon index.js) & npm run start"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://still-woodland-82685.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },

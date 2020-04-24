@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         right: '0'
     },
     overlay: {
-        position: 'fixed',
+        position: 'absolute',
         width: '100%',
         height: '100%',
         backgroundColor: '#fff',
