@@ -89,7 +89,7 @@ const MyAccount = () => {
             }
         }
         fetchData();
-    }, []);
+    });
 
 
     const HtmlTooltip = withStyles((theme) => ({
@@ -120,7 +120,7 @@ const MyAccount = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [history]);
 
     return (
         <Container className={classes.container}>

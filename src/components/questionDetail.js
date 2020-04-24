@@ -124,7 +124,7 @@ const QuestionDetail = (props) => {
 
     useEffect(() => {
         fetchData();
-    }, [answer]);
+    });
 
     const answers = questionDetail.answers;
 

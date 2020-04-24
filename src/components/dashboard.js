@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import Questions from './common/questions';
 import { getCookie } from './common/utility';
@@ -8,17 +7,7 @@ import {
     useHistory,
 } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%'
-    },
-    inline: {
-        display: 'inline',
-    },
-}));
-
 const Dashboard = () => {
-    const classes = useStyles();
     const [question, setQuestions] = useState([]);
     const history = useHistory();
 
@@ -41,7 +30,7 @@ const Dashboard = () => {
             }
         }
         fetchData();
-    }, []);
+    });
 
 
     return (

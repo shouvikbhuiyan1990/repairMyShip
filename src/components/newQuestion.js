@@ -11,8 +11,7 @@ import { getCookie } from './common/utility';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 import {
-    useHistory,
-    Link as RouterLink
+    useHistory
 } from "react-router-dom";
 
 const getStyles = makeStyles((theme) => ({
@@ -96,7 +95,6 @@ const NewQuestion = () => {
                         defaultValue="Default Value"
                         variant="outlined"
                         fullWidth
-                        onChange={(e) => setQuestion(e.target.value)}
                         className={classes.multiField}
                         value={questionBody}
                         onChange={(e) => setQuestionBody(e.target.value)}

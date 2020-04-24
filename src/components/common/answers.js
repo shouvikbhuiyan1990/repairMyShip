@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -86,8 +86,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
 
         debounce(async () => {
             try {
-                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/upvote', body);
-                const { data } = res;
+                await axios.post('https://still-woodland-82685.herokuapp.com/answers/upvote', body);
             }
             catch(e) {
                 throw e;
@@ -104,8 +103,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
 
         debounce(async () => {
             try {
-                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/downvote', body);
-                const { data } = res;
+                await axios.post('https://still-woodland-82685.herokuapp.com/answers/downvote', body);
             }
             catch(e) {
                 throw e;

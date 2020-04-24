@@ -58,7 +58,6 @@ const getStyles = makeStyles((theme) => ({
 
 const Login = () => {
     const classes = getStyles();
-    const [loggedIn, setLogin] = useState(false);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [loader, setLoader] = useState(false);
@@ -79,8 +78,6 @@ const Login = () => {
             const { data } = res;
             setLoader(false);
 
-            //to be refactored
-            setLogin(!!data.isValidUser);
             setLogIn(!!data.isValidUser);
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProtectedRoute from './routes/protectedRoute';
 import HomeRoute from './routes/homeRoute';
 import Login from './login';
@@ -9,7 +9,7 @@ import QuestionDetail from './questionDetail';
 import NewQuestion from './newQuestion';
 import ForgotPassword from './forgotPassword';
 
-import DashBoardQL from '../components/grapgQL/dashboard';
+// import DashBoardQL from '../components/grapgQL/dashboard';
 
 
 import {
@@ -30,7 +30,7 @@ const Wrapper = () => {
                 <ForgotPassword />
             </Route>
             <ProtectedRoute path='/questions' exact="true">
-                <DashBoardQL />
+                <Dashboard />
             </ProtectedRoute>
             <ProtectedRoute  path='/myaccount'>
                 <MyAccount />
