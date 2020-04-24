@@ -86,7 +86,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
 
         debounce(async () => {
             try {
-                let res = await axios.post('http://localhost:8080/answers/upvote', body);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/upvote', body);
                 const { data } = res;
             }
             catch(e) {
@@ -104,7 +104,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
 
         debounce(async () => {
             try {
-                let res = await axios.post('http://localhost:8080/answers/downvote', body);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/downvote', body);
                 const { data } = res;
             }
             catch(e) {
@@ -127,7 +127,7 @@ const Answer = ({data, index, upvotes, downvotes, userDetails={}, fetchData, upd
         debounce(async () => {
             try {
                 setLoader(false);
-                let res = await axios.post('http://localhost:8080/answers/deleteOne', body, headers);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/deleteOne', body, headers);
                 const { data } = res;
                 fetchData();
             }

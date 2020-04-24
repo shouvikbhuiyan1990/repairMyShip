@@ -71,7 +71,7 @@ const Header = () => {
         };
 
         try {
-            let result = await axios('http://localhost:8080/users/logout', headers);
+            let result = await axios('https://still-woodland-82685.herokuapp.com/users/logout', headers);
 
             setLoader(false);
             deleteCookie('loginToken');

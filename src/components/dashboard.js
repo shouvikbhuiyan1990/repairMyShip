@@ -31,7 +31,7 @@ const Dashboard = () => {
             };
 
             try {
-                let result = await axios('http://localhost:8080/questions/getAll', headers);
+                let result = await axios('https://still-woodland-82685.herokuapp.com/questions/getAll', headers);
                 setQuestions(result.data);
             }
             catch(e) {

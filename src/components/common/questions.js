@@ -53,7 +53,7 @@ const Questions = ({title, showDivider, index, qid, upvotes, downvotes, answerLe
 
         debounce(async () => {
             try {
-                let res = await axios.post('http://localhost:8080/questions/upvote', body);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/questions/upvote', body);
                 const { data } = res;
             }
             catch(e) {
@@ -71,7 +71,7 @@ const Questions = ({title, showDivider, index, qid, upvotes, downvotes, answerLe
 
         debounce(async () => {
             try {
-                let res = await axios.post('http://localhost:8080/questions/downvote', body);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/questions/downvote', body);
                 const { data } = res;
             }
             catch(e) {

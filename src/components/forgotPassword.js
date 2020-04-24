@@ -73,7 +73,7 @@ const ForgotPassword = () => {
         };
 
         try {
-            let res = await axios.put('http://localhost:8080/users/changepassword', body);
+            let res = await axios.put('https://still-woodland-82685.herokuapp.com/users/changepassword', body);
             setLoader(false);
             const { data } = res;
             setSuccess(true);

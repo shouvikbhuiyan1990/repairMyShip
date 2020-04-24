@@ -105,7 +105,7 @@ const QuestionDetail = (props) => {
             }
         };
         try {
-            let result = await axios(`http://localhost:8080/question/getAnswersByQuestion/${qid}`, headers);
+            let result = await axios(`https://still-woodland-82685.herokuapp.com/question/getAnswersByQuestion/${qid}`, headers);
             setQuestionDetail(result.data);
         }
         catch(e) {
@@ -142,7 +142,7 @@ const QuestionDetail = (props) => {
                     answer: richText,
                     ownerQuestion: qid
                 };
-                let res = await axios.post('http://localhost:8080/answers/save', body, headers);
+                let res = await axios.post('https://still-woodland-82685.herokuapp.com/answers/save', body, headers);
                 setLoader(false);
                 const { data } = res;
                 setnswer(data);
@@ -154,7 +154,7 @@ const QuestionDetail = (props) => {
                     id: answerid,
                     ownerQuestion: qid
                 };
-                let res = await axios.put('http://localhost:8080/answers/updateAnswer', body, headers);
+                let res = await axios.put('https://still-woodland-82685.herokuapp.com/answers/updateAnswer', body, headers);
                 setLoader(false);
                 const { data } = res;
                 setnswer(data);

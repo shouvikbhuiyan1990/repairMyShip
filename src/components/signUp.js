@@ -76,7 +76,7 @@ const SignUp = () => {
             password
         };
         try {
-            let res = await axios.post('http://localhost:8080/users/saveOne', body);
+            let res = await axios.post('https://still-woodland-82685.herokuapp.com/users/saveOne', body);
             setLoader(false);
             const { data } = res;
             setLogIn(true);

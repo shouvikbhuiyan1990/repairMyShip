@@ -51,7 +51,7 @@ const NewQuestion = () => {
                 }
             };
 
-            let res = await axios.post('http://localhost:8080/questions/save', body, headers);
+            let res = await axios.post('https://still-woodland-82685.herokuapp.com/questions/save', body, headers);
             const { data } = res;
             setLoader(false);
 

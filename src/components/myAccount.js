@@ -78,7 +78,7 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
-                let result = await axios.get('http://localhost:8080/users/getQuestionsByUser', headers);
+                let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getQuestionsByUser', headers);
                 setQuestions(result.data.questions);
                 setAnswers(result.data.answers);
             }
@@ -110,7 +110,7 @@ const MyAccount = () => {
 
         const fetchData = async () => {
             try {
-                let result = await axios.get('http://localhost:8080/users/getLoyalty', headers);
+                let result = await axios.get('https://still-woodland-82685.herokuapp.com/users/getLoyalty', headers);
                 setLoyalty(result.data.tier);
             }
             catch (e) {
